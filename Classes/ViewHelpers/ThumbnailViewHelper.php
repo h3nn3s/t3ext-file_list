@@ -14,6 +14,9 @@
 
 namespace Causal\FileList\ViewHelpers;
 
+use TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
+
 /**
  * Resizes a given image (if required) and renders the respective img tag
  *
@@ -50,7 +53,7 @@ namespace Causal\FileList\ViewHelpers;
  * Could not get image resource for "NonExistingImage.png".
  * </output>
  */
-class ThumbnailViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper
+class ThumbnailViewHelper extends ImageViewHelper
 {
 
     /**
@@ -67,7 +70,7 @@ class ThumbnailViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper
      *
      * @see https://docs.typo3.org/typo3cms/TyposcriptReference/ContentObjects/Image/
      *
-     * @throws \TYPO3\CMS\Fluid\Core\ViewHelper\Exception
+     * @throws Exception;
      * @return string Rendered tag
      */
     public function render()
