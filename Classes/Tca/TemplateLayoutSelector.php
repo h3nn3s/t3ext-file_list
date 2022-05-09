@@ -28,14 +28,13 @@ class TemplateLayoutSelector
     /**
      * Renders a list of available template layouts.
      *
-     * @param array $conf
-     * @param object $pObj
+     * @param array $fieldDefinition
      * @return array
      */
-    public function render(array $conf = [], $pObj): array
+    public function render(array &$fieldDefinition): array
     {
-        if (empty($conf)) {
-            $conf = ['items' => []];
+        if (empty($fieldDefinition)) {
+            $fieldDefinition = ['items' => []];
         }
 
         $items = [];
@@ -43,8 +42,8 @@ class TemplateLayoutSelector
             $items[] = $item;
         }
 
-        $conf['items'] = array_merge($conf['items'], $items);
+        $fieldDefinition['items'] = array_merge($fieldDefinition['items'], $items);
 
-        return $conf;
+        return $fieldDefinition;
     }
 }
